@@ -20,10 +20,12 @@ DRV sends the data to design and SCO (Expected) @ 60, 100, 140, 180, etc..
 MON sends the data to SCO (Actual) @ 80, 100, 120, 140, 160, etc.. 
 
 **Snippet of logs:**
+
 <img width="727" height="423" alt="image" src="https://github.com/user-attachments/assets/39cd0da9-f3cf-4a40-adc8-c0e0f8d09135" />
 
 
 **Snippet of Signals:**
+
 <img width="684" height="267" alt="image" src="https://github.com/user-attachments/assets/cafc436e-e189-43c5-aef2-80b3492fe871" />
 
 **Planned enhancments:**
