@@ -16,8 +16,12 @@
 4) SCO will check whether the last transaction from TB is same as the data in the design.
    If both are same, the result will be PASS. Otherwise it will be fail. 
 
+**Timing behavior (example):**  
 DRV sends the data to design and SCO (Expected) @ 60, 100, 140, 180, etc..
 MON sends the data to SCO (Actual) @ 80, 100, 120, 140, 160, etc.. 
+
+EDA link:
+https://www.edaplayground.com/x/u6es
 
 **Snippet of logs:**
 
