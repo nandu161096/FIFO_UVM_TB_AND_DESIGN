@@ -52,3 +52,32 @@ interface fifo_interface;
     logic        full;
     logic        empty;
 endinterface 
+
+// Other way
+always_ff @(posedge clk) begin
+  if (rst) begin
+    wptr <= 0;
+    rptr <= 0;
+    cnt  <= 0;
+  end else begin
+    case ({wr && !full, rd && !empty})
+      2'b10: begin // Write only
+        mem[wptr] <= din;
+        wptr <= wptr + 1;
+        cnt  <= cnt + 1;
+      end
+      2'b01: begin // Read only
+        dout <= mem[rptr];
+        rptr <= rptr + 1;
+        cnt  <= cnt - 1;
+      end
+      2'b11: begin // Both
+        mem[wptr] <= din;
+        dout <= mem[rptr];
+        wptr <= wptr + 1;
+        rptr <= rptr + 1;
+        // cnt stays same
+      end
+    endcase
+  end
+end
